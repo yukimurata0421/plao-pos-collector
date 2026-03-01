@@ -1,0 +1,21 @@
+# data
+/data/
+/public/
+*.jsonl
+!tests/fixtures/*.jsonl
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# build
+build/
+dist/
+
+# misc
+.DS_Store

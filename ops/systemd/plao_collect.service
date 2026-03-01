@@ -1,0 +1,18 @@
+[Unit]
+Description=PLAO JSONL Collector
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Example values. Customize User/WorkingDirectory/ExecStart for your Pi.
+User=YOUR_USER
+WorkingDirectory=/home/YOUR_USER/plao
+ExecStart=/home/YOUR_USER/plao/.venv/bin/plao-collect --out-dir /home/YOUR_USER/plao/data/plao_pos
+# Restart policy (example defaults)
+Restart=always
+RestartSec=5
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

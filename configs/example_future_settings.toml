@@ -1,0 +1,14 @@
+# Placeholder for future settings support.
+# This file is not loaded by PLAO yet.
+
+[collect]
+out_dir = "./data/plao_pos"
+poll_interval = 2.0
+min_emit_interval = 2.0
+track_ttl = 21600
+readsb_path = "/run/readsb/aircraft.json"
+fsync_every = 200
+
+[report]
+in_dir = "./data/plao_pos"
+out_dir = "./public"
