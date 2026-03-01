@@ -14,11 +14,7 @@ def test_utc_filename(tmp_path):
     )
     try:
         ts = -3600.0  # 1969-12-31 23:00:00 UTC
-        snap = {
-            "aircraft": [
-                {"hex": "abc123", "lat": 35.0, "lon": 139.0, "seen": 0.1}
-            ]
-        }
+        snap = {"aircraft": [{"hex": "abc123", "lat": 35.0, "lon": 139.0, "seen": 0.1}]}
         c.process_snapshot(ts, snap)
         expected = tmp_path / "pos_19691231.jsonl"
         assert expected.exists()

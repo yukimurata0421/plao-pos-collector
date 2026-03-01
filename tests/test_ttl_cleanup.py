@@ -14,11 +14,7 @@ def test_ttl_cleanup(tmp_path):
     )
     try:
         ts = 1000.0
-        snap = {
-            "aircraft": [
-                {"hex": "abc123", "lat": 35.0, "lon": 139.0, "seen": 0.1}
-            ]
-        }
+        snap = {"aircraft": [{"hex": "abc123", "lat": 35.0, "lon": 139.0, "seen": 0.1}]}
         c.process_snapshot(ts, snap)
         assert "abc123" in c.tracks
 

@@ -14,4 +14,5 @@ def copy_fixture(fixtures_dir):
     def _copy(name: str, dst: Path) -> None:
         src = fixtures_dir / name
         dst.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
+
     return _copy

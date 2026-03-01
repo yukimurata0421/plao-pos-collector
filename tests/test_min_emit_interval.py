@@ -14,11 +14,7 @@ def test_min_emit_interval(tmp_path):
         fsync_every=1,
     )
     try:
-        snap = {
-            "aircraft": [
-                {"hex": "abc123", "lat": 10.0, "lon": 20.0, "seen": 0.1}
-            ]
-        }
+        snap = {"aircraft": [{"hex": "abc123", "lat": 10.0, "lon": 20.0, "seen": 0.1}]}
         c.process_snapshot(1000.0, snap)
         c.process_snapshot(1005.0, snap)
 

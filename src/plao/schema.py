@@ -7,6 +7,7 @@ SchemaVersion = Literal[1]
 
 class PosRecord(TypedDict):
     """Schema contract for PLAO records (documentation + static analysis only)."""
+
     type: Literal["pos"]  # required
     schema_ver: SchemaVersion  # required
     ts: float  # required

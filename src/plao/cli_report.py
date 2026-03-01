@@ -78,17 +78,19 @@ def main() -> None:
             if last_ts is None or ts_f > last_ts:
                 last_ts = ts_f
 
-    rows: list[dict[str, str | int]] = [{
-        "day": "ALL",
-        "first_ts": "" if first_ts is None else f"{first_ts}",
-        "last_ts": "" if last_ts is None else f"{last_ts}",
-        "first_iso": "" if first_ts is None else _iso_from_ts(first_ts),
-        "last_iso": "" if last_ts is None else _iso_from_ts(last_ts),
-        "days_covered": len(days_seen),
-        "n_files": n_files,
-        "total_records": total_records,
-        "unique_hex": len(unique_hex),
-    }]
+    rows: list[dict[str, str | int]] = [
+        {
+            "day": "ALL",
+            "first_ts": "" if first_ts is None else f"{first_ts}",
+            "last_ts": "" if last_ts is None else f"{last_ts}",
+            "first_iso": "" if first_ts is None else _iso_from_ts(first_ts),
+            "last_iso": "" if last_ts is None else _iso_from_ts(last_ts),
+            "days_covered": len(days_seen),
+            "n_files": n_files,
+            "total_records": total_records,
+            "unique_hex": len(unique_hex),
+        }
+    ]
 
     out_path = out_dir / "summary.csv"
     with out_path.open("w", newline="", encoding="utf-8") as f:
@@ -127,15 +129,17 @@ def main() -> None:
         for day in sorted(per_day_count.keys()):
             first = per_day_first[day]
             last = per_day_last[day]
-            w.writerow({
-                "day_utc": day,
-                "total_records": per_day_count[day],
-                "unique_hex": len(per_day_hex[day]),
-                "first_ts": f"{first}",
-                "last_ts": f"{last}",
-                "first_iso": _iso_from_ts(first),
-                "last_iso": _iso_from_ts(last),
-            })
+            w.writerow(
+                {
+                    "day_utc": day,
+                    "total_records": per_day_count[day],
+                    "unique_hex": len(per_day_hex[day]),
+                    "first_ts": f"{first}",
+                    "last_ts": f"{last}",
+                    "first_iso": _iso_from_ts(first),
+                    "last_iso": _iso_from_ts(last),
+                }
+            )
 
 
 if __name__ == "__main__":
