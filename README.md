@@ -3,7 +3,9 @@
 PLAO is a **raw JSONL position logger** for Raspberry Pi. It polls `readsb` and appends position records to daily files. plao-report is intended for operational sanity checks, not performance evaluation.
 
 PLAO is a raw JSONL position producer.
-All analytics (AUC / heatmaps / reports) are handled by ARENA.
+
+PLAO performs no evaluation, no optimization, and no performance interpretation.
+It only produces append-only logs for downstream statistical analysis by ARENA.
 
 ## Architecture
 
@@ -116,6 +118,7 @@ plao-report --in-dir data/plao_pos --out-dir public
 - schema versioned
 - long-running safe
 - no Web dependency
+- evaluation is externalized (handled by ARENA)
 
 ## systemd Unit
 
