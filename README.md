@@ -1,5 +1,7 @@
 # PLAO
 
+![CI](https://github.com/yukimurata0421/plao-pos-collector/actions/workflows/ci.yml/badge.svg)
+
 PLAO is a **raw JSONL position logger** for Raspberry Pi. It polls `readsb` and appends position records to daily files. plao-report is intended for operational sanity checks, not performance evaluation.
 
 PLAO is a raw JSONL position producer.

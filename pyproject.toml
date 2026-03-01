@@ -17,7 +17,11 @@ plao-collect = "plao.cli_collect:main"
 plao-report = "plao.cli_report:main"
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff"]
+dev = [
+  "pytest==8.2.2",
+  "ruff==0.6.9",
+  "pre-commit==3.7.1",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
